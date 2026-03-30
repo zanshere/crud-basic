@@ -1,42 +1,48 @@
-# sv
+# CRUD Basic (Svelte + Express)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Project ini sudah disiapkan dengan:
+- **Frontend:** SvelteKit (`/`)
+- **Backend:** Express + TypeScript (`/backend`)
 
-## Creating a project
+## 1) Install dependencies
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project
-npx sv create my-app
+```bash
+npm install
+npm --prefix backend install
 ```
 
-To recreate this project with the same configuration:
+## 2) Jalankan project (frontend + backend)
 
-```sh
-# recreate this project
-npx sv@0.13.0 create --template minimal --types ts --add tailwindcss="plugins:typography,forms" eslint prettier --install npm .
+```bash
+npm run dev:full
 ```
 
-## Developing
+Default URL:
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:3001`
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## 3) Jalankan masing-masing service
 
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+Frontend saja:
+```bash
+npm run dev:frontend
 ```
 
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
+Backend saja:
+```bash
+npm run dev:backend
 ```
 
-You can preview the production build with `npm run preview`.
+## 4) Endpoint backend untuk cek health
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```bash
+GET /api/health
+```
+Contoh:
+`http://localhost:3001/api/health`
+
+## 5) Build
+
+```bash
+npm run build:full
+```

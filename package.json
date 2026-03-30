@@ -11,7 +11,13 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"dev:frontend": "vite dev",
+		"dev:backend": "npm --prefix backend run dev",
+		"dev:full": "npm --prefix backend exec concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+		"build:frontend": "vite build",
+		"build:backend": "npm --prefix backend run build",
+		"build:full": "npm run build:frontend && npm run build:backend"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.3",
